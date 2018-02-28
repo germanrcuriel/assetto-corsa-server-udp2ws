@@ -1,0 +1,32 @@
+{
+  "name": "assetto-corsa-server-udp2ws",
+  "version": "0.1.0",
+  "description": "UDP Relay and WebSockets Proxy for Assetto Corsa",
+  "bin": "src/udp2ws.js",
+  "scripts": {
+    "build": "bin/build.sh",
+    "start": "babel-node src/udp2ws.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.18.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "pkg": "^4.3.0"
+  },
+  "dependencies": {
+    "ini": "^1.3.5",
+    "smart-buffer": "^4.0.1",
+    "socket.io": "^2.0.4"
+  }
+}

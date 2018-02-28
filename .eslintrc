@@ -1,0 +1,16 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "standard"
+  ],
+  "plugins": [
+    "babel"
+  ],
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "babel/semi": 0,
+    "padded-blocks": [ "error", { "classes": "always" }]
+  }
+}
