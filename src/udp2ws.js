@@ -10,8 +10,8 @@ const udp = new ACSP(config)
 ws.on('connection', (socket) => {
 
   actions.forEach((action) => {
-    socket.on(action.name, (data) => {
-      udp[action.command](data)
+    socket.on(action.name, (...data) => {
+      udp[action.command](...data)
     })
   })
 

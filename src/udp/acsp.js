@@ -264,7 +264,7 @@ class ACSP extends EventEmitter {
     this.send(buf.toBuffer())
   }
 
-  requestSessionInfo (index = -1) {
+  requestSessionInfo (index = 0) {
     const buf = SmartBuffer.fromSize(3)
     buf.writeUInt8(types.GET_SESSION_INFO)
     buf.writeUInt16LE(index, 1)
@@ -277,7 +277,7 @@ class ACSP extends EventEmitter {
     const buf = SmartBuffer.fromSize(nameBuf.length + 15)
     buf.writeUInt8(types.SET_SESSION_INFO, 0)
     buf.writeUInt8(sessionInfo.session_index, 1)
-    buf.insertBuffer(nameBuf, 2)
+    buf.writeBuffer(nameBuf, 2)
     buf.writeUInt8(sessionInfo.type, nameBuf.length + 2)
     buf.writeUInt32LE(sessionInfo.laps, nameBuf.length + 3)
     buf.writeUInt32LE(sessionInfo.time, nameBuf.length + 7)
@@ -299,7 +299,7 @@ class ACSP extends EventEmitter {
     const buf = SmartBuffer.fromSize(msgBuf.length + 2)
     buf.writeUInt8(types.SEND_CHAT, 0)
     buf.writeUInt8(id, 1)
-    buf.insertBuffer(msgBuf, 2)
+    buf.writeBuffer(msgBuf, 2)
 
     this.send(buf.toBuffer())
   }
@@ -317,7 +317,7 @@ class ACSP extends EventEmitter {
     const cmdBuf = this.writeStringW(command)
     const buf = SmartBuffer.fromSize(cmdBuf.length + 1)
     buf.writeUInt8(types.ADMIN_COMMAND, 0)
-    buf.insertBuffer(cmdBuf, 1)
+    buf.writeBuffer(cmdBuf, 1)
 
     this.send(buf.toBuffer())
   }
