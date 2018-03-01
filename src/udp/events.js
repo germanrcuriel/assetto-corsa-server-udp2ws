@@ -1,4 +1,5 @@
 const events = [
+
   'car_info',
   'car_update',
   'chat',
@@ -18,6 +19,7 @@ const events = [
   'udp_listening',
   'unsupported_event',
   'version'
+
 ]
 
 export default events
