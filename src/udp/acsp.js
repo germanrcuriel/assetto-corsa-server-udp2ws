@@ -1,7 +1,7 @@
 import EventEmitter from 'events'
+import dgram from 'dgram'
 
 import { SmartBuffer } from 'smart-buffer'
-import dgram from 'dgram'
 
 import events from './events'
 import types from './types'
