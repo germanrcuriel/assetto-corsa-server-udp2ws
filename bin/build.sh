@@ -6,10 +6,7 @@ PACKAGE_VERSION=$(cat package.json \
   | awk -F: '{ print $2 }' \
   | sed 's/[",\t ]//g')
 
-echo $PACKAGE_VERSION
-
-rm -rf lib
-rm -rf build
+rm -rf lib build
 babel src --out-dir lib
 pkg lib/udp2ws.js -t latest-linux-x64,latest-win-x64 --out-path build
 rm -rf lib
