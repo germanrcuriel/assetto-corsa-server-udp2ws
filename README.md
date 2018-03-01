@@ -15,15 +15,13 @@ Grab the last release from the  [releases](https://github.com/germanrcuriel/asse
 
 Unzip and place the files in the same host you have Assetto Corsa Dedicated Server.
 
+Open `udp2ws.ini` file with your favorite editor and modify as you need.
+
 ```bash
 nohup ./udp2ws 2>&1 &
 ```
 
 This will keep the application running in the background.
-
-## Configuration
-
-Open `udp2ws.ini` file with your favorite editor and modify as you need. Everything is explained in place.
 
 ## Usage example
 
@@ -41,7 +39,7 @@ Replace `localhost` by the server IP running `udp2ws`.
 
 This specific command sends a message to everyone connected to the server.
 
-## Events
+## WebSocket Events
 
 ### Car Information
 
@@ -317,7 +315,7 @@ socket.on('version', (data) => { ... })
 
 ---
 
-## Commands
+## WebSocket Commands
 
 ### Admin command
 
