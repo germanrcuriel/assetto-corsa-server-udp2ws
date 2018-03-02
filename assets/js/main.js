@@ -128,7 +128,7 @@ $(document).ready(function () {
 
     switch ($(this).val()) {
       case 'admin_command':
-        setPlaceholder(input, '/kick_user 0')
+        setPlaceholder(input, '/kick 0')
         break;
       case 'broadcast_message':
         setPlaceholder(input, 'Message')
