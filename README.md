@@ -8,6 +8,15 @@ This Assetto Corsa Dedicated Server plugin creates an UDP Relay (to chain plugin
 - Assetto Corsa Dedicated Server
 - Any Linux x64 distro or Windows x64 (can be built for other OS, architectures)
 
+## Live example
+
+You can try this websockets service at [http://udp2ws.sim-racing.es/](http://udp2ws.sim-racing.es/). 
+
+Just click connect to play with a real Assetto Corsa Test Server. 
+
+You can also join the server to see the results of specific events. Server name is "udp2ws plugin test".
+
+If is not up, you can always use your installation address to try it.
 
 ## Installation
 
