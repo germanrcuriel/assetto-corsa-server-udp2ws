@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>udp2ws examples</title>
+    <title>udp2ws Test Tool</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <style>
@@ -78,11 +78,15 @@
           <button class="btn btn-secondary form-control" id="server-request" type="button" disabled>Send</button>
         </div>
       </div>
-      <div class="form-row mt-4">
+      <div class="col-xs-12 mt-5">
+        <h5>Response</h5>
+      </div>
+      <div class="form-row">
         <div class="col-xs-12 col-sm-12">
-          <div class="form-group">
-            <label for="socket-request">Server response</label>
-            <div class="float-right" id="socket-event-type"></div>
+          <div class="form-group align-items-center">
+            <div id="socket-event-type" class="mb-2">
+              Last event type received: <code>none</code>
+            </div>
             <div class="form-control" id="socket-messages">
               <pre><code></code></pre>
             </div>
@@ -90,7 +94,7 @@
         </div>
       </div>
     </div>
-    <script src="http://192.168.1.251:30000/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

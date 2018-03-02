@@ -24,7 +24,9 @@ $(document).ready(function () {
   ]
 
   function showResponse (eventType, message) {
-    $('#socket-event-type').html('Event type: <code>' + eventType + '</code>')
+    eventType = eventType || 'none'
+
+    $('#socket-event-type code').html(eventType)
 
     if (typeof message === "object") {
       message = utils.prettyPrint(message)
@@ -85,7 +87,6 @@ $(document).ready(function () {
   function prepareSocket () {
     events.forEach(function (ev) {
       socket.on(ev, function (data) {
-        console.log(ev, data)
         showResponse(ev, data)
       })
     })
@@ -177,6 +178,7 @@ $(document).ready(function () {
     }
 
     $('#server-message').val('')
+    $(this).blur()
   })
 
   $('#server-connect').on('click', function () {
@@ -189,6 +191,7 @@ $(document).ready(function () {
 
     socket = io($('#server-address').val())
     prepareSocket()
+    $(this).blur()
   })
 
 })
