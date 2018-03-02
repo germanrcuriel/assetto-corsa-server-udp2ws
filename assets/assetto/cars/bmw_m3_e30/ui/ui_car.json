@@ -1,0 +1,62 @@
+{
+
+	"name": "BMW M3 E30",
+	"brand": "BMW",
+	"description": "Based on the 1986 model year E30 3-Series, the E30 M3 used the BMW S14 four cylinder engine.The production of the E30 road car was to homologate the M3 for Group A Touring Car racing. <br/><br/>
+	
+	The Sport Evolution model production run of 600 (sometimes referred as EVO3) increased engine displacement to 2.5 L and produced 235 hp (175 kW). Sport Evolution models have enlarged front bumper openings and an adjustable multi-position front splitter and rear wing. Brake cooling ducts were installed in place of front foglights. An additional 786 convertibles were also produced.<br/><br/>
+	
+	To keep the car competitive in racing following year-to-year homologation rules changes, homologation specials were produced. Homologation (motorsport) rules roughly stated that the race version must reflect the street car aerodynamically and in engine displacement. These include: the Evo 1, Evo 2, and Sport Evolution some of which featured less weight, improved aerodynamics, taller front wheel arches (Sport Evolution; to further facilitate 18-inch (460 mm) wheels in DTM), brake ducting, and more power. Other limited-production models (based on evolution models but featuring special paintwork and/or unique interior schemes commemorating championship wins) include the Europa, Ravaglia, Cecotto, and Europameister. Production of the original E30 M3 ended in early 1992.",
+	"tags": ["#small sports", "rwd", "manual", "street", "germany", "vintage"],  
+	"class": "street",
+
+	"specs":
+	{
+		"bhp": "238bhp",
+		"torque": "240Nm",
+		"weight": "1200kg",
+		"topspeed": "248km/h",
+		"acceleration": "7.4s 0-100",
+		"pwratio": "5.04kg/hp",
+		"range": 89
+	},
+	 "torqueCurve": [
+       ["0","0"],
+	    ["500","100"],
+       ["1000","138"],
+       ["1500","165"],
+	    ["2000","171"],
+	    ["2500","174"],
+	    ["3000","183"],
+	    ["3500","217"],
+	    ["4000","236"],
+	    ["4500","238"],
+		["4750","240"],
+	    ["5000","238"],
+	    ["5500","239"],
+		["6000","238"],
+	    ["6500","238"],
+	    ["7000","240"],
+		["7250","234"]
+       ],
+       "powerCurve": [
+   ["0","0"],
+	    ["500","7"],
+       ["1000","19"],
+       ["1500","35"],
+	    ["2000","48"],
+	    ["2500","61"],
+	    ["3000","77"],
+	    ["3500","107"],
+	    ["4000","133"],
+	    ["4500","150"],
+		["4750","160"],
+	    ["5000","167"],
+	    ["5500","185"],
+		["6000","201"],
+	    ["6500","217"],
+	    ["7000","236"],
+		["7250","238"]
+	        ]
+
+}

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Server Status</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+      .track {
+        position: relative;
+      }
+      .track-preview {
+        width: 100%;
+      }
+      .track-outline {
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+      .offline {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">udp2ws Test Tool</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a href="#" class="nav-link">Server Status</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid mt-5 offline">
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-md-5 col-lg-4 col-xl-3 m-auto">
+            <h3>Server offline</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid mt-5 online">
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-md-5 col-lg-4 col-xl-3 m-auto">
+            <div class="track d-flex align-items-center col-xs-12">
+              <img src="" class="track-preview" width="300" />
+              <img src="" class="track-outline" width="300" />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-md-5 col-lg-4 col-xl-3 m-auto">
+            <div class="d-flex flex-column strack-info col-xs-12">
+              <div class="text-center mt-3"><h5><span class="server-name"></span></h5></div>
+
+              <div class="mt-4"><h5>Session Details</h5></div>
+              <div><strong>Current Session</strong>: <span class="server-session"></span></div>
+
+              <div class="mt-4"><h5>Track Details</h5></div>
+              <div><strong>Track</strong>: <span class="track-name"></span></div>
+              <div><strong>Description</strong>: <span class="track-description"></span></div>
+              <div><strong>City</strong>: <span class="track-city"></span></div>
+              <div><strong>Country</strong>: <span class="track-country"></span></div>
+              <div><strong>Length</strong>: <span class="track-length"></span></div>
+              <div><strong>Width</strong>: <span class="track-width"></span></div>
+
+              <div class="mt-4"><h5>Track conditions</h5></div>
+              <div><strong>Ambient Temperature</strong>: <span class="ambient-temp"></span></div>
+              <div><strong>Road Temperature</strong>: <span class="road-temp"></span></div>
+              <div><strong>Weather</strong>: <span class="weather"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="/assets/js/status.js"></script>
+  </body>
+</html>
