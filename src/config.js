@@ -12,7 +12,8 @@ let config = {
   },
   WEBSOCKETS: {
     origins: '',
-    port: 30000
+    port: 30000,
+    password: ''
   }
 }
 

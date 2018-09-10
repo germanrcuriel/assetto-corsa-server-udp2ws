@@ -10,9 +10,9 @@ This Assetto Corsa Dedicated Server plugin creates an UDP Relay (to chain plugin
 
 ## Live example
 
-You can try this websockets service at [http://udp2ws.sim-racing.es/](http://udp2ws.sim-racing.es/). 
+You can try this websockets service at [http://udp2ws.sim-racing.es/](http://udp2ws.sim-racing.es/).
 
-Just click connect to play with a real Assetto Corsa Test Server. 
+Just click connect to play with a real Assetto Corsa Test Server.
 
 You can also join the server to see the results of specific events. Server name is "udp2ws plugin test".
 
@@ -334,6 +334,8 @@ socket.emit('admin_command', command)
 
 Will execute the command sent.
 
+If `password` is set, this command will require to [authenticate](#authentication) first.
+
 ---
 
 ### Broadcast message
@@ -343,6 +345,8 @@ socket.emit('broadcast_message', message)
 ```
 
 Sends a message to the chat
+
+If `password` is set in `udp2ws.ini` file, this command will require to [authenticate](#authentication) first.
 
 ---
 
@@ -384,6 +388,8 @@ socket.emit('kick_user', carId)
 
 Kicks the `carId` from the server.
 
+If `password` is set in `udp2ws.ini` file, this command will require to [authenticate](#authentication) first.
+
 ---
 
 ### Next session
@@ -393,6 +399,8 @@ socket.emit('next_session')
 ```
 
 Loads the next session.
+
+If `password` is set in `udp2ws.ini` file, this command will require to [authenticate](#authentication) first.
 
 ---
 
@@ -404,6 +412,8 @@ socket.emit('restart_session')
 
 Restarts the current session.
 
+If `password` is set in `udp2ws.ini` file, this command will require to [authenticate](#authentication) first.
+
 ---
 
 ### Send message
@@ -413,6 +423,8 @@ socket.emit('send_message', carId, message)
 ```
 
 Sends a private message to `carId`.
+
+If `password` is set in `udp2ws.ini` file, this command will require to [authenticate](#authentication) first.
 
 ---
 
@@ -432,6 +444,8 @@ Sets the session information.
 - `laps`. **Integer**. Number of laps.
 - `time`. **Integer**. Session time in seconds.
 - `wait_time`. **Integer**. Wait time in seconds.
+
+If `password` is set in `udp2ws.ini` file, this command will require to [authenticate](#authentication) first.
 
 ---
 
