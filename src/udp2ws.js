@@ -47,7 +47,6 @@ ws.on('connection', (socket) => {
       }
 
       socket.isAdmin = true
-      postAuthenticate(socket)
       socket.emit('console', {
         type: 'success',
         level: 'auth',
@@ -55,9 +54,9 @@ ws.on('connection', (socket) => {
         message: 'Logged in'
       })
     })
-  } else {
-    postAuthenticate(socket)
   }
+
+  postAuthenticate(socket)
 
   udp.events.forEach((eventName) => {
     udp.on(eventName, (data) => socket.emit(eventName, data))
