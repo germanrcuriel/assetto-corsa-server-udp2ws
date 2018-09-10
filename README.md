@@ -48,6 +48,33 @@ Replace `localhost` by the server IP running `udp2ws`.
 
 This specific command sends a message to everyone connected to the server.
 
+## Authentication
+
+This is only necessary if you set a password in `udp2ws.ini` file.
+
+```js
+socket.emit('authenticate', 'password')
+```
+
+Answer to that request will be sent to `console` event. See [WebSocket Errors and Info messages](#webSocket-errors-and-info-messages) for more info.
+
+## WebSocket Errors and Info messages
+
+In order to get error and information messages, you can subscribe to `console` event.
+
+```js
+socket.on('console', (messageObject) => { ... })
+```
+
+Each message received will contain:
+
+- `type`. Message type (`error` or `success`)
+- `level`. Context (`auth` or `permission`)
+- `key`. Action identifier (each [WebSocket Command](#websocket-commands) name including `authenticate`)
+- `message`. Human readable message
+
+Assetto Corsa Dedicated Server errors are pending to implement in `console` event. They are being sent to `server_error` for now.
+
 ## WebSocket Events
 
 ### Car Information
