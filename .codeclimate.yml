@@ -1,0 +1,29 @@
+version: "2"         # required to adjust maintainability checks
+checks:
+  argument-count:
+    config:
+      threshold: 4
+  complex-logic:
+    config:
+      threshold: 4
+  file-lines:
+    config:
+      threshold: 350
+  method-complexity:
+    config:
+      threshold: 5
+  method-count:
+    config:
+      threshold: 40
+  method-lines:
+    config:
+      threshold: 35
+  similar-code:
+    config:
+      threshold: 60
+  identical-code:
+    config:
+      threshold: 60
+plugins:
+  eslint:
+    enabled: true
