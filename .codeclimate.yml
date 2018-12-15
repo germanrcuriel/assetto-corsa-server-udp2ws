@@ -20,10 +20,10 @@ checks:
       threshold: 35
   similar-code:
     config:
-      threshold: 60
+      threshold: 100
   identical-code:
     config:
-      threshold: 60
+      threshold: 100
 plugins:
   eslint:
     enabled: true
