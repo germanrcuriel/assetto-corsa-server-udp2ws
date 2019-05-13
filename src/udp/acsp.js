@@ -355,6 +355,7 @@ class ACSP extends EventEmitter {
     const length = buf.readUInt8()
     const message = buf.readString(length * 4, 'utf-16le')
 
+    /* eslint-disable-next-line */
     return message.replace(/\u0000/gi, '')
   }
 

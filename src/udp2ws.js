@@ -59,7 +59,7 @@ ws.on('connection', (socket) => {
   postAuthenticate(socket)
 
   udp.events.forEach((eventName) => {
-    udp.on(eventName, (data) => socket.emit(eventName, data))
+    udp.on(eventName, (data) => socket.broadcast.emit(eventName, data))
   })
 
 })
