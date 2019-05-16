@@ -142,7 +142,10 @@ class ACSP extends EventEmitter {
       car_id: buf.readUInt8(),
       message: this.readStringW(buf)
     }
-    this.emit('chat', message)
+
+    if (isAllowedChatMessage(message)) {
+      this.emit('chat', message)
+    }
   }
 
   onNewOrClosedConnection (buf, id) {
@@ -320,6 +323,13 @@ class ACSP extends EventEmitter {
     buf.writeBuffer(cmdBuf, 1)
 
     this.send(buf.toBuffer())
+  }
+
+  isAllowedChatMessage (message) {
+    const msg = message.trim()
+
+    if (msg.startsWith('/admin')) return false
+    return true
   }
 
   restartSession () {
