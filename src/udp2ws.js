@@ -57,11 +57,10 @@ ws.on('connection', (socket) => {
   }
 
   postAuthenticate(socket)
+})
 
-  udp.events.forEach((eventName) => {
-    udp.on(eventName, (data) => socket.broadcast.emit(eventName, data))
-  })
-
+udp.events.forEach((eventName) => {
+  udp.on(eventName, (data) => ws.sockets.emit(eventName, data))
 })
 
 ws.listen(config.WEBSOCKETS.port)
