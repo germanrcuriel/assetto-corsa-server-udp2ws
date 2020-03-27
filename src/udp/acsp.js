@@ -143,7 +143,7 @@ class ACSP extends EventEmitter {
       message: this.readStringW(buf)
     }
 
-    if (this.isAllowedChatMessage(message)) {
+    if (this.isAllowedChatMessage(message.message)) {
       this.emit('chat', message)
     }
   }
