@@ -259,7 +259,7 @@ class ACSP extends EventEmitter {
     this.server.send(buf, 0, buf.length, this.config.ACPLUGIN.proxyPluginPort)
   }
 
-  requestCarInfo (id) {
+  getCarInfo (id) {
     const buf = SmartBuffer.fromSize(2)
     buf.writeUInt8(types.GET_CAR_INFO, 0)
     buf.writeUInt8(id, 1)
@@ -267,7 +267,7 @@ class ACSP extends EventEmitter {
     this.send(buf.toBuffer())
   }
 
-  requestSessionInfo (index = 0) {
+  getSessionInfo (index = 0) {
     const buf = SmartBuffer.fromSize(3)
     buf.writeUInt8(types.GET_SESSION_INFO)
     buf.writeUInt16LE(index, 1)
