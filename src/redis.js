@@ -2,9 +2,9 @@ import Redis from 'ioredis'
 import config from './config'
 
 const redisOptions = {
-  host: config.REDIS.host,
-  port: config.REDIS.port,
-  password: config.REDIS.password,
+  host: config.REDIS.redisHost,
+  port: config.REDIS.redisPort,
+  password: config.REDIS.redisPassword,
   lazyConnect: true,
   retryStrategy: (times) => {
     if (times > 2) return null
@@ -28,7 +28,7 @@ class BaseClass {
   }
 
   async connect () {
-    if (!config.REDIS.enabled) return
+    if (!config.REDIS.redisEnabled) return
 
     try {
       this.attachEvents()
@@ -55,10 +55,10 @@ export class RedisPublisher extends BaseClass {
   }
 
   publish (eventName, message) {
-    const channel = `${config.REDIS.publishChannel}.${eventName}`
+    const channel = `${config.REDIS.redisPublishChannel}.${eventName}`
 
     if (this.instance.status !== 'ready') return
-    if (!config.REDIS.eventsToPublish.includes(eventName)) return
+    if (!config.REDIS.redisEvents.includes(eventName)) return
     this.instance.publish(channel, JSON.stringify(message))
   }
 
@@ -81,7 +81,7 @@ export class RedisSubscriber extends BaseClass {
   }
 
   onReady () {
-    this.instance.psubscribe(config.REDIS.subscribeChannel)
+    this.instance.psubscribe(config.REDIS.redisSubscribeChannel)
     this.instance.on('pmessage', this.onMessage.bind(this))
   }
 

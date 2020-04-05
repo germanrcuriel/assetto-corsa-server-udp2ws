@@ -11,10 +11,10 @@ let config = {
     sendPort: 12000
   },
   REDIS: {
-    enabled: false,
-    host: '127.0.0.1',
-    port: 6379,
-    password: '',
+    redisEnabled: false,
+    redisHost: '127.0.0.1',
+    redisPort: 6379,
+    redisPassword: '',
     publishChannel: 'udp2ws.events',
     eventsToPublish: [
       'car_info',
