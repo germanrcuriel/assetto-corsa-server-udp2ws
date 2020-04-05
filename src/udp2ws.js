@@ -19,7 +19,6 @@ const sub = () => {
 
       if (!action) return null
       if (!udp[action.command]) return null
-      console.log(udp[action.command])
       udp[action.command](message)
     }
   })

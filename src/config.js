@@ -1,8 +1,8 @@
 import { existsSync, readFileSync } from 'fs'
-import { dirname, join } from 'path'
+import { join } from 'path'
 import ini from 'ini'
 
-const configFile = join(dirname(process.execPath), 'udp2ws.ini')
+const configFile = join(process.cwd(), 'udp2ws.ini')
 
 let config = {
   hostname: '127.0.0.1',
