@@ -59,7 +59,7 @@ export class RedisPublisher extends BaseClass {
 
     if (this.instance.status !== 'ready') return
     if (!config.REDIS.eventsToPublish.includes(eventName)) return
-    this.instance.publish(channel, message)
+    this.instance.publish(channel, JSON.stringify(message))
   }
 
 }
