@@ -1,11 +1,30 @@
 import io from 'socket.io'
+import { RedisPublisher, RedisSubscriber } from './redis'
 import ACSP from './udp/acsp'
 
 import config from './config'
+
 import actions from './actions'
 
 const ws = io(config.WEBSOCKETS)
 const udp = new ACSP(config)
+
+const pub = new RedisPublisher()
+const sub = () => {
+  return new RedisSubscriber({
+    onMessage: (command, message) => {
+      const action = actions.all.find((item) => {
+        return item.name === command
+      })
+
+      if (!action) return null
+      if (!udp[action.command]) return null
+      console.log(udp[action.command])
+      udp[action.command](message)
+    }
+  })
+}
+
 const adminPassword = config.WEBSOCKETS.password
 
 const postAuthenticate = (socket) => {
@@ -59,8 +78,13 @@ ws.on('connection', (socket) => {
   postAuthenticate(socket)
 })
 
+sub()
+
 udp.events.forEach((eventName) => {
-  udp.on(eventName, (data) => ws.sockets.emit(eventName, data))
+  udp.on(eventName, (data) => {
+    ws.sockets.emit(eventName, data)
+    pub.publish(eventName, data)
+  })
 })
 
 ws.listen(config.WEBSOCKETS.port)
