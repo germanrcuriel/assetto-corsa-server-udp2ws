@@ -1,6 +1,6 @@
 const actions = [
-  { name: 'get_car_info', command: 'requestCarInfo' },
-  { name: 'get_session_info', command: 'requestSessionInfo' },
+  { name: 'get_car_info', command: 'getCarInfo' },
+  { name: 'get_session_info', command: 'getSessionInfo' },
   { name: 'enable_realtime_report', command: 'enableRealtimeReport' }
 ]
 
@@ -16,5 +16,6 @@ const adminActions = [
 
 export default {
   public: actions,
-  private: adminActions
+  private: adminActions,
+  all: [...actions, ...adminActions]
 }
