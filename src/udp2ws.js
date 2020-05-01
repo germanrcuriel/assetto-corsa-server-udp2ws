@@ -1,5 +1,6 @@
 import io from 'socket.io'
 import { RedisPublisher, RedisSubscriber } from './redis'
+import { LogReader } from './logReader'
 import ACSP from './udp/acsp'
 
 import config from './config'
@@ -8,6 +9,8 @@ import actions from './actions'
 
 const ws = io(config.WEBSOCKETS)
 const udp = new ACSP(config)
+
+const reader = new LogReader()
 
 const pub = new RedisPublisher()
 const sub = () => {
@@ -83,6 +86,10 @@ udp.events.forEach((eventName) => {
   udp.on(eventName, (data) => {
     ws.sockets.emit(eventName, data)
     pub.publish(eventName, data)
+
+    if (eventName === 'new_session') {
+      reader.start(ws, pub)
+    }
   })
 })
 
