@@ -7,6 +7,7 @@ const configFile = join(process.cwd(), 'udp2ws.ini')
 let config = {
   hostname: '127.0.0.1',
   ACPLUGIN: {
+    acFolder: '../..',
     receivePort: 11000,
     sendPort: 12000
   },
