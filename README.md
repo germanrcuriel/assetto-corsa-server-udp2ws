@@ -278,6 +278,22 @@ The `leaderboard` array contains, for each car:
 
 ---
 
+### Lap split
+
+```js
+socket.on('lap_split', (data) => { ... })
+```
+
+When a lap split is completed by a driver
+
+#### Definition
+
+- `car_id`. **Integer**. Car ID
+- `split_number`. **Integer**. Split index.
+- `split_time`. **Integer**. Split time.
+
+---
+
 ### New connection
 
 ```js
