@@ -1,4 +1,4 @@
-import { readdirSync } from 'fs'
+import { readdirSync, statSync } from 'fs'
 import { join } from 'path'
 
 import { Tail } from 'tail'
@@ -29,6 +29,10 @@ export class LogReader {
   getLastLogFile () {
     const path = join(process.cwd(), `${config.ACPLUGIN.acFolder}/logs/session`)
     const files = readdirSync(path)
+
+    files.sort((a, b) => {
+      return statSync(`${path}/${a}`).mtime.getTime() - statSync(`${path}/${b}`).mtime.getTime()
+    })
 
     return `${path}/${files.slice(-1).pop()}`
   }
