@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  var socket = io('http://ws.sim-racing.es:30000')
+  var socket = io('http://cloud.germix.net:30000')
   var server = 'http://cloud.germix.net:8081/INFO'
   var current_session = 0
   var last_track
