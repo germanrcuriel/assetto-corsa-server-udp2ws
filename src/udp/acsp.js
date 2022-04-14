@@ -251,6 +251,8 @@ class ACSP extends EventEmitter {
   }
 
   send (buf) {
+    if (buf instanceof Error) buf = buf.message
+
     this.client.send(buf, 0, buf.length, this.config.ACPLUGIN.sendPort)
   }
 

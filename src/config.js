@@ -2,7 +2,12 @@ import { existsSync, readFileSync } from 'fs'
 import { join } from 'path'
 import ini from 'ini'
 
-const configFile = join(process.cwd(), 'udp2ws.ini')
+import yargs from 'yargs/yargs'
+import { hideBin } from 'yargs/helpers'
+
+const argv = yargs(hideBin(process.argv)).argv
+
+const configFile = argv.config || join(process.cwd(), 'udp2ws.ini')
 
 let config = {
   hostname: '127.0.0.1',
@@ -42,5 +47,7 @@ if (existsSync(configFile)) {
   const contents = ini.parse(readFileSync(configFile, 'UTF8'))
   config = Object.assign({}, config, contents)
 }
+
+console.log(config)
 
 export default config
