@@ -1,6 +1,6 @@
 {
   "name": "assetto-corsa-server-udp2ws",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "UDP Relay and WebSockets Proxy for Assetto Corsa",
   "bin": "src/udp2ws.js",
   "scripts": {
