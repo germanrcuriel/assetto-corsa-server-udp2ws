@@ -284,7 +284,9 @@ The `leaderboard` array contains, for each car:
 socket.on('lap_split', (data) => { ... })
 ```
 
-When a lap split is completed by a driver
+When a lap split is completed by a driver. 
+
+**IMPORTANT**: [Assetto Corsa Server Manager](https://emperorservers.com/products/assetto-corsa-server-manager) is required for this to work as it outputs the server logs in the expected way.
 
 #### Definition
 

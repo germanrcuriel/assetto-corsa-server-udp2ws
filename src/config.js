@@ -37,7 +37,7 @@ let config = {
     subscribeChannel: 'udp2ws.commands.*'
   },
   WEBSOCKETS: {
-    origins: '',
+    origins: [],
     port: 30000,
     password: ''
   }

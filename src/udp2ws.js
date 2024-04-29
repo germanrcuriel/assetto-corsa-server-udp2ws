@@ -1,4 +1,4 @@
-import io from 'socket.io'
+import { Server } from 'socket.io'
 
 import { RedisPublisher, RedisSubscriber } from './redis'
 import { LogReader } from './logReader'
@@ -8,7 +8,13 @@ import config from './config'
 
 import actions from './actions'
 
-const ws = io(config.WEBSOCKETS)
+const allowedOrigins = config.WEBSOCKETS.origins
+
+const ws = new Server({
+  cors: {
+    origin: allowedOrigins && allowedOrigins.length ? allowedOrigins : '*'
+  }
+})
 const udp = new ACSP(config)
 
 const reader = new LogReader()
